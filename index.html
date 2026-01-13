@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMC Laâyoune – Pôle d'Excellence Management & Commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&family=Noto+Kufi+Arabic:wght@400;700;900&display=swap" rel="stylesheet">
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden selection:bg-blue-600 selection:text-white">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-[100] transition-all duration-500 py-6 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer group" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div class="p-2.5 rounded-2xl bg-blue-600 text-white shadow-xl group-hover:rotate-12 transition-transform duration-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-extrabold text-white tracking-tight leading-none" id="logo-text">CMC <span class="text-blue-400">Laâyoune</span></span>
+                        <span class="text-[9px] text-blue-300 font-bold uppercase tracking-widest mt-1">Management & Commerce</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex space-x-8 items-center">
+                    <div id="nav-items" class="flex space-x-8 text-[11px] font-bold text-white/90 uppercase tracking-[0.15em]">
+                        <!-- JS injected -->
+                    </div>
+                    <div class="h-6 w-px bg-white/20 mx-2"></div>
+                    <select onchange="window.changeLanguage(this.value)" id="lang-select" class="bg-white/10 text-white border border-white/20 rounded-xl px-4 py-2 text-xs font-bold outline-none cursor-pointer hover:bg-white/20 transition-all">
+                        <option value="fr" class="text-slate-900">FR</option>
+                        <option value="ar" class="text-slate-900">AR</option>
+                        <option value="en" class="text-slate-900">EN</option>
+                    </select>
+                    <a href="#contact" data-i18n="apply_btn" class="bg-blue-600 text-white px-8 py-3.5 rounded-2xl text-[11px] font-black uppercase shadow-2xl shadow-blue-600/30 hover:bg-blue-700 hover:-translate-y-1 transition-all">Postuler</a>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button id="mobile-btn" class="lg:hidden text-white p-2.5 bg-white/10 rounded-xl backdrop-blur-md border border-white/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-slate-900/95 backdrop-blur-2xl border-b border-white/10 p-10 space-y-6 text-white text-center">
+            <!-- JS injected -->
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="relative min-h-screen flex items-center overflow-hidden bg-slate-950">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-slate-950/90 z-10"></div>
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover animate-slow-zoom" alt="Campus">
+        </div>
+        
+        <div class="relative z-20 max-w-7xl mx-auto px-4 w-full pt-20">
+            <div class="max-w-4xl reveal">
+                <span data-i18n="hero_badge" class="inline-block py-2 px-6 bg-blue-600/20 backdrop-blur-xl border border-blue-400/30 text-blue-300 rounded-full text-[10px] font-black mb-10 tracking-[0.2em] uppercase shadow-2xl">
+                    Session 2024 - 2025 ouverte
+                </span>
+                <h1 id="hero-title" class="text-6xl md:text-8xl font-serif text-white mb-10 leading-[1.1] drop-shadow-2xl">
+                    L'Excellence du <span class="text-blue-500">Sahara</span> Professionnel
+                </h1>
+                <p id="hero-desc" class="text-xl md:text-2xl text-slate-200/90 mb-14 leading-relaxed max-w-2xl font-medium">
+                    <!-- Dynamic -->
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-6 rtl:sm:space-x-reverse">
+                    <a href="#majors" data-i18n="hero_cta_1" class="px-12 py-5 bg-blue-600 text-white rounded-2xl font-black text-xs uppercase tracking-widest shadow-2xl shadow-blue-600/40 hover:bg-blue-700 hover:scale-105 transition-all flex items-center justify-center">Voir les filières</a>
+                    <a href="#about" data-i18n="hero_cta_2" class="px-12 py-5 bg-white/10 border border-white/20 text-white rounded-2xl font-black text-xs uppercase tracking-widest backdrop-blur-md hover:bg-white/20 hover:scale-105 transition-all flex items-center justify-center">Découvrir CMC</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer opacity-50">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 14l-7 7-7-7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </div>
+    </section>
+
+    <!-- Partners Dynamic Bar -->
+    <div class="bg-white py-16 border-b border-slate-100 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="text-[10px] font-black text-slate-400 text-center uppercase tracking-[0.5em] mb-12 opacity-80">Nos Partenaires de Réussite</p>
+            <div class="flex flex-wrap justify-center items-center gap-16 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-700">
+                <img src="https://upload.wikimedia.org/wikipedia/fr/b/bd/Logo_OFPPT.png" class="h-12 w-auto" alt="OFPPT">
+                <span class="text-3xl font-black text-slate-900 tracking-tighter">RÉGION <span class="text-blue-600">LAÂYOUNE</span></span>
+                <span class="text-2xl font-extrabold text-blue-900">PHOSBOUCRAA</span>
+                <span class="text-xl font-bold text-slate-600 border-x-4 border-slate-200 px-6">CCIS</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Numbers / Stats -->
+    <section class="py-24 bg-slate-950 text-white relative">
+        <div class="absolute inset-0 bg-blue-600/5 z-0"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-12 text-center reveal">
+            <div class="space-y-4">
+                <div class="text-5xl md:text-6xl font-black text-blue-500 tracking-tighter">980+</div>
+                <p class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Étudiants Actifs</p>
+            </div>
+            <div class="space-y-4">
+                <div class="text-5xl md:text-6xl font-black text-blue-500 tracking-tighter">18</div>
+                <p class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Modules d'Excellence</p>
+            </div>
+            <div class="space-y-4">
+                <div class="text-5xl md:text-6xl font-black text-blue-500 tracking-tighter">95%</div>
+                <p class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Taux d'Insertion</p>
+            </div>
+            <div class="space-y-4">
+                <div class="text-5xl md:text-6xl font-black text-blue-500 tracking-tighter">50+</div>
+                <p class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Entreprises Partenaires</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-32 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div class="relative reveal">
+                <div class="absolute -inset-4 bg-blue-600/5 rounded-[4rem] blur-3xl"></div>
+                <img src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=1000" class="rounded-[3rem] shadow-2xl relative z-10 grayscale-[30%] hover:grayscale-0 transition-all duration-700 border-[12px] border-white" alt="Education">
+                <div class="absolute -bottom-10 -right-10 bg-slate-900 text-white p-12 rounded-[2.5rem] hidden md:block shadow-3xl transform rotate-3 hover:rotate-0 transition-transform duration-500 z-20">
+                    <span class="block text-5xl font-black mb-2">12</span>
+                    <span class="text-[10px] uppercase font-bold tracking-[0.3em] opacity-60">Années d'Impact</span>
+                </div>
+            </div>
+            <div class="reveal delay-200">
+                <h2 data-i18n="about_subtitle" class="text-blue-600 font-black text-[10px] uppercase tracking-[0.5em] mb-8 flex items-center">
+                    <span class="w-12 h-px bg-blue-600 mr-4"></span>NOTRE IDENTITÉ
+                </h2>
+                <h3 data-i18n="about_title" class="text-5xl md:text-6xl font-serif text-slate-900 mb-10 leading-[1.2]">Un Nouveau Modèle Pédagogique</h3>
+                <p data-i18n="about_text" class="text-slate-500 text-xl leading-relaxed mb-12 font-medium">
+                    <!-- Dynamic -->
+                </p>
+                <div id="features-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <!-- JS injected -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Steps -->
+    <section class="py-32 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-blue-600 font-black text-[10px] uppercase tracking-[0.5em] mb-6">PROCESSUS</h2>
+                <h3 class="text-4xl md:text-6xl font-serif text-slate-900">Rejoindre l'Élite</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12" id="steps-grid">
+                <!-- JS injected via script.js admissionSteps -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Infrastructure -->
+    <section id="infra" class="py-32 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 reveal">
+                <div class="max-w-2xl">
+                    <h2 data-i18n="infra_subtitle" class="text-blue-600 font-black text-[10px] uppercase tracking-[0.5em] mb-8">LE CAMPUS</h2>
+                    <h3 data-i18n="infra_title" class="text-4xl md:text-6xl font-serif text-slate-900 leading-none">Infrastructures 4.0</h3>
+                </div>
+                <div class="h-px bg-slate-200 w-32 mb-4 hidden lg:block"></div>
+            </div>
+            <div id="infra-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- JS injected -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Majors -->
+    <section id="majors" class="py-32 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-24 reveal">
+                <h2 data-i18n="majors_subtitle" class="text-blue-600 font-black text-[10px] uppercase tracking-[0.5em] mb-8">NOS FILIÈRES</h2>
+                <h3 data-i18n="majors_title" class="text-5xl md:text-7xl font-serif text-slate-900">Spécialisations Digitales</h3>
+            </div>
+            <div id="majors-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <!-- JS injected -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Life -->
+    <section id="life" class="py-32 bg-slate-950 text-white overflow-hidden relative">
+        <div class="absolute -right-64 -top-64 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]"></div>
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-32 items-center relative z-10">
+            <div class="reveal">
+                <h2 data-i18n="life_subtitle" class="text-blue-500 font-black text-[10px] uppercase tracking-[0.5em] mb-10">VIE ÉTUDIANTE</h2>
+                <h3 data-i18n="life_title" class="text-5xl md:text-7xl font-serif mb-12 leading-tight">Vivre son Potentiel</h3>
+                <p data-i18n="life_text" class="text-slate-400 text-xl mb-16 leading-relaxed font-medium">
+                    <!-- Dynamic -->
+                </p>
+                <div id="life-list" class="space-y-8">
+                    <!-- JS injected -->
+                </div>
+            </div>
+            <div class="relative reveal delay-300">
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="space-y-6 pt-12">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800" class="rounded-[2.5rem] shadow-2xl h-80 w-full object-cover hover:scale-105 transition-transform duration-500" alt="Student Life">
+                        <img src="https://images.unsplash.com/photo-1523240715632-d984bc3107d1?q=80&w=800" class="rounded-[2.5rem] shadow-2xl h-64 w-full object-cover hover:scale-105 transition-transform duration-500" alt="Group Study">
+                    </div>
+                    <div class="space-y-6">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d676936d9b39?q=80&w=800" class="rounded-[2.5rem] shadow-2xl h-64 w-full object-cover hover:scale-105 transition-transform duration-500" alt="Workshop">
+                        <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800" class="rounded-[2.5rem] shadow-2xl h-80 w-full object-cover hover:scale-105 transition-transform duration-500" alt="Event">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-32 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-24 reveal">
+                <h2 data-i18n="faq_subtitle" class="text-blue-600 font-black text-[10px] uppercase tracking-[0.5em] mb-8">FAQ</h2>
+                <h3 data-i18n="faq_title" class="text-4xl md:text-6xl font-serif text-slate-900 leading-tight">Questions & Réponses</h3>
+            </div>
+            <div id="faq-container" class="space-y-6 reveal delay-100">
+                <!-- JS injected -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map -->
+    <section id="contact" class="py-32 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="bg-white rounded-[4rem] shadow-3xl overflow-hidden flex flex-col lg:flex-row reveal border border-slate-100">
+                <div class="bg-blue-600 p-20 lg:w-1/3 text-white flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-700 to-indigo-900 opacity-90"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-4xl font-serif mb-12">Contact</h3>
+                        <div class="space-y-10">
+                            <div class="flex items-start space-x-6 rtl:space-x-reverse">
+                                <div class="bg-white/10 p-4 rounded-2xl"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                                <div><p class="text-blue-100/50 text-[10px] font-black uppercase mb-1">Localisation</p><p data-i18n="contact_addr" class="font-bold text-lg">Zone Industrielle, Laâyoune</p></div>
+                            </div>
+                            <div class="flex items-start space-x-6 rtl:space-x-reverse">
+                                <div class="bg-white/10 p-4 rounded-2xl"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                                <div><p class="text-blue-100/50 text-[10px] font-black uppercase mb-1">Téléphone</p><p class="font-bold text-lg">+212 5 28 89 XX XX</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-12 h-64 rounded-3xl overflow-hidden shadow-2xl relative z-10 border-4 border-white/10 grayscale hover:grayscale-0 transition-all duration-700">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3544.5878235215757!2d-13.16782348494701!3d27.12645858303861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc37728639257e1d%3A0x7d00f68e0d3f278d!2sLa%C3%A2youne!5e0!3m2!1sfr!2sma!4v1620000000000!5m2!1sfr!2sma" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="p-20 lg:w-2/3 bg-white">
+                    <h3 data-i18n="contact_form_title" class="text-4xl font-serif text-slate-900 mb-16">Contactez l'Admission</h3>
+                    <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div class="space-y-4">
+                            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Nom Complet</label>
+                            <input type="text" data-i18n-placeholder="placeholder_name" class="w-full p-6 rounded-2xl bg-slate-50 border border-slate-100 outline-none focus:ring-4 focus:ring-blue-100 transition-all font-medium" required>
+                        </div>
+                        <div class="space-y-4">
+                            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Email</label>
+                            <input type="email" data-i18n-placeholder="placeholder_email" class="w-full p-6 rounded-2xl bg-slate-50 border border-slate-100 outline-none focus:ring-4 focus:ring-blue-100 transition-all font-medium" required>
+                        </div>
+                        <div class="md:col-span-2 space-y-4">
+                            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Message</label>
+                            <textarea data-i18n-placeholder="placeholder_msg" class="w-full p-6 rounded-2xl bg-slate-50 border border-slate-100 outline-none focus:ring-4 focus:ring-blue-100 transition-all h-48 resize-none font-medium" required></textarea>
+                        </div>
+                        <button type="submit" data-i18n="contact_send" class="bg-blue-600 text-white font-black py-6 rounded-2xl shadow-3xl shadow-blue-600/30 hover:bg-blue-700 hover:-translate-y-1 transition-all md:col-span-2 text-[11px] uppercase tracking-widest">Envoyer le Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-500 py-32 text-center border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-center space-x-4 mb-12">
+                <div class="bg-blue-600 p-3 rounded-xl text-white"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                <span class="text-3xl font-extrabold text-white tracking-tighter uppercase">CMC LAÂYOUNE</span>
+            </div>
+            <p class="text-[10px] font-black tracking-[0.6em] uppercase opacity-40 mb-12">&copy; <span id="year"></span> CMC LAÂYOUNE. TOUS DROITS RÉSERVÉS.</p>
+            <div class="flex justify-center space-x-12 rtl:space-x-reverse text-[10px] font-bold uppercase tracking-widest">
+                <a href="#" class="hover:text-white transition-colors">Mentions Légales</a>
+                <a href="#" class="hover:text-white transition-colors">Admission</a>
+                <a href="#" class="hover:text-white transition-colors">Plan du site</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button id="back-to-top" class="fixed bottom-10 right-10 z-[110] bg-blue-600 text-white p-5 rounded-3xl shadow-3xl shadow-blue-600/50 transition-all duration-500 transform translate-y-32 opacity-0 hover:-translate-y-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
